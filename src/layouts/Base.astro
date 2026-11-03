@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+import { profile } from "../data/content";
+
+interface Props {
+  title: string;
+  description?: string;
+  // Jalur relatif ke halaman utama: "./" di beranda, "../" di halaman proyek.
+  root: string;
+}
+const { title, description = profile.summary, root } = Astro.props;
+const home = root === "./" ? "" : root;
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body class="font-sans antialiased">
+    <header class="sticky top-0 z-10 border-b border-line bg-night/85 backdrop-blur">
+      <nav class="mx-auto flex max-w-3xl items-center justify-between gap-4 px-6 py-4 text-sm">
+        <a href={root} class="whitespace-nowrap font-semibold tracking-wide">
+          <span class="sm:hidden">{profile.name.split(" ")[0]}</span>
+          <span class="hidden sm:inline">{profile.name}</span>
+        </a>
+        <div class="flex gap-4 text-muted sm:gap-6">
+          <a href={`${home}#proyek`} class="hover:text-cyan">Proyek</a>
+          <a href={`${home}#pengalaman`} class="hover:text-cyan">Pengalaman</a>
+          <a href={`${home}#kontak`} class="hover:text-cyan">Kontak</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="mx-auto max-w-3xl px-6">
+      <slot />
+    </main>
+
+    <footer class="border-t border-line">
+      <p class="mx-auto max-w-3xl px-6 py-6 text-xs text-muted">© {new Date().getFullYear()} {profile.name}</p>
+    </footer>
+  </body>
+</html>
