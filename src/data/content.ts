@@ -8,6 +8,7 @@ export const profile = {
   email: "ryzaldyaldy@gmail.com",
   github: "https://github.com/tropicalforet",
   website: "https://ryzaldy.vercel.app",
+  instagram: "https://www.instagram.com/ryzaldym",
   // linkedin: "https://www.linkedin.com/in/...",
 };
 
