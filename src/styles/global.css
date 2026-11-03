@@ -65,3 +65,69 @@ body {
   background: var(--color-gold);
   box-shadow: 0 0 18px rgb(212 175 55 / 0.35);
 }
+
+/* Layar pembuka (booting) */
+#boot {
+  display: none;
+}
+.booting body {
+  overflow: hidden;
+}
+.booting #boot {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 1.5rem;
+  background: var(--color-night);
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: opacity 0.45s ease;
+}
+.boot-inner {
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+.boot-line {
+  margin: 0.35rem 0;
+  opacity: 0;
+}
+.boot-line.show {
+  opacity: 1;
+}
+.boot-welcome {
+  margin-top: 0.75rem;
+  color: #fff;
+}
+.boot-cursor {
+  color: var(--color-pink);
+  animation: blink 1s steps(1) infinite;
+}
+.boot-skip {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+#boot.boot-out {
+  opacity: 0;
+  pointer-events: none;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Foto profil: bingkai tipis dengan pantulan neon */
+.photo {
+  border: 1px solid var(--color-line);
+  box-shadow: 0 0 0 1px rgb(255 45 149 / 0.25), 0 0 28px rgb(255 45 149 / 0.18);
+}

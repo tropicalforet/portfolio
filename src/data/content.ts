@@ -5,8 +5,9 @@ export const profile = {
   role: "Web Developer",
   summary:
     "Lulusan S1 Sistem Informasi UNIKOM. Membangun sistem berbasis web dengan Laravel untuk kebutuhan organisasi nyata, serta proyek machine learning dan IoT.",
-  email: "spentry223@gmail.com",
+  email: "ryzaldyaldy@gmail.com",
   github: "https://github.com/tropicalforet",
+  website: "https://portfolio-aldyss.vercel.app",
   // linkedin: "https://www.linkedin.com/in/...",
 };
 
@@ -82,18 +83,22 @@ export const projects: Project[] = [
     context: "MSIB · MySkill IoT Development · Tim 5 orang",
     description:
       "Sensor MQ-135 pada ESP32 mendeteksi gas, memicu buzzer dan LED, memutus listrik lewat relay, dan mengirim notifikasi ke dashboard Blynk.",
+    highlights: [
+      "Tiga status: normal (< 100 ppm), peringatan (100–199 ppm), bahaya (≥ 200 ppm)",
+      "Saat bahaya: relay memutus listrik, buzzer berbunyi, LED merah menyala",
+      "Pemantauan real-time di dashboard Blynk",
+    ],
     stack: ["ESP32", "MQ-135", "Arduino IDE", "Blynk"],
     links: [{ label: "GitHub", href: "https://github.com/tropicalforet/finalprojectIoT" }],
+    images: [{ src: "rangkaian.webp", alt: "Rangkaian ESP32, sensor MQ-135, relay, dan LED di breadboard" }],
   },
 ];
 
 export const experience = [
   { role: "Web Developer Intern", org: "Diskominfo Jawa Barat" },
   { role: "Peserta MSIB, IoT Development for Smart Industry", org: "MySkill" },
-  { role: "Staf Kementerian Pendidikan dan Kebudayaan, program PMB", org: "BEM UNIKOM" },
 ];
 
 export const education = [
   { title: "S1 Sistem Informasi", org: "Universitas Komputer Indonesia (UNIKOM)" },
-  { title: "Beasiswa Kaltim Tuntas, kategori Prestasi", org: "Pemprov Kalimantan Timur" },
 ];

@@ -5,3 +5,4 @@ dist/
 .env
 .DS_Store
 push-ke-github.bat
+*.pdf
