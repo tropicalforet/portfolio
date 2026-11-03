@@ -7,7 +7,7 @@ export const profile = {
     "Lulusan S1 Sistem Informasi UNIKOM. Membangun sistem berbasis web dengan Laravel untuk kebutuhan organisasi nyata, serta proyek machine learning dan IoT.",
   email: "ryzaldyaldy@gmail.com",
   github: "https://github.com/tropicalforet",
-  website: "https://portfolio-aldyss.vercel.app",
+  website: "https://ryzaldy.vercel.app",
   // linkedin: "https://www.linkedin.com/in/...",
 };
 
