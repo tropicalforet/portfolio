@@ -33,10 +33,11 @@ export const projects: Project[] = [
     highlights: [
       "Tanda tangan elektronik dengan verifikasi QR",
       "Penomoran surat otomatis, SKPD, activity log, dashboard",
-      "Diuji Black Box pada 8 modul, di-hosting di Hostinger",
+      "Diuji dengan Black Box Testing pada 8 modul",
     ],
     stack: ["Laravel 12", "PHP 8.2", "MySQL", "Tailwind", "Alpine.js"],
     links: [{ label: "GitHub", href: "https://github.com/tropicalforet/SI-Administrasi-Surat-PT.FASINDO" }],
+    images: [{ src: "dashboard.webp", alt: "Dashboard Direktur Utama" }, { src: "surat-masuk.webp", alt: "Daftar surat masuk dengan sifat dan status" }, { src: "monitoring-disposisi.webp", alt: "Monitoring disposisi berjenjang" }, { src: "surat-keluar.webp", alt: "Surat keluar dengan status e-sign" }],
   },
   {
     slug: "smart-prb",
@@ -51,6 +52,7 @@ export const projects: Project[] = [
     ],
     stack: ["Laravel 12", "Inertia", "React", "TypeScript", "Tailwind", "SQLite"],
     links: [{ label: "GitHub", href: "https://github.com/tropicalforet/smart-prb-public" }],
+    images: [{ src: "dashboard.webp", alt: "Dashboard monitoring kepatuhan" }, { src: "data-pasien.webp", alt: "Data pasien dengan jadwal dan early warning" }, { src: "rekap-kepatuhan.webp", alt: "Rekap kepatuhan per FKTP" }],
   },
   {
     slug: "diabetes-prediction",
@@ -61,6 +63,7 @@ export const projects: Project[] = [
     highlights: ["Akurasi 97,05% · ROC-AUC 0,9635 pada test set 20%"],
     stack: ["Python", "scikit-learn", "Streamlit"],
     links: [{ label: "GitHub", href: "https://github.com/tropicalforet/Diabetes-Prediction" }],
+    images: [{ src: "form.webp", alt: "Form input data kesehatan" }, { src: "hasil.webp", alt: "Hasil prediksi beserta probabilitas" }],
   },
   {
     slug: "clustering-inflasi-jabar",
@@ -71,6 +74,7 @@ export const projects: Project[] = [
     highlights: ["k = 6 (Elbow + Silhouette 0,452), visualisasi PCA dengan filter"],
     stack: ["Python", "pandas", "scikit-learn", "Streamlit"],
     links: [{ label: "GitHub", href: "https://github.com/tropicalforet/clustering-inflasi-jabar" }],
+    images: [{ src: "ringkasan.webp", alt: "Ringkasan hasil dan filter cluster" }, { src: "sebaran-pca.webp", alt: "Peta sebaran cluster hasil PCA" }, { src: "tabel.webp", alt: "Tabel kelompok inflasi per wilayah" }],
   },
   {
     slug: "deteksi-kebocoran-gas",

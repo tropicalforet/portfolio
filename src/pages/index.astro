@@ -6,12 +6,12 @@ import { profile, projects, experience, education } from "../data/content";
 <Base title={`${profile.name} — ${profile.role}`} root="./">
   <section class="pt-24 pb-16 sm:pt-32">
     <p class="font-mono text-sm text-cyan">{profile.role}</p>
-    <h1 class="mt-3 text-5xl font-bold tracking-tight sm:text-7xl">
-      {profile.name}<span class="text-pink">.</span>
+    <h1 class="neon mt-3 text-5xl font-bold italic tracking-tight sm:text-7xl">
+      {profile.name}<span class="text-cyan">.</span>
     </h1>
     <p class="mt-6 max-w-xl text-lg leading-relaxed text-muted">{profile.summary}</p>
     <div class="mt-8 flex flex-wrap gap-3 text-sm font-medium">
-      <a href="#proyek" class="rounded bg-pink px-4 py-2 text-night hover:bg-pink/85">Lihat proyek</a>
+      <a href="#proyek" class="btn-neon rounded px-4 py-2">Lihat proyek</a>
       <a href={profile.github} target="_blank" rel="noopener" class="rounded border border-line px-4 py-2 hover:border-cyan hover:text-cyan">GitHub</a>
     </div>
   </section>
@@ -19,7 +19,7 @@ import { profile, projects, experience, education } from "../data/content";
   <div class="horizon"></div>
 
   <section id="proyek" class="scroll-mt-20 py-16">
-    <h2 class="text-sm font-mono uppercase tracking-widest text-pink">Proyek</h2>
+    <h2 class="deco-label">Proyek</h2>
     <ul class="mt-8 divide-y divide-line">
       {projects.map((p) => (
         <li class="group relative py-8 first:pt-0">
@@ -41,7 +41,7 @@ import { profile, projects, experience, education } from "../data/content";
 
   <section id="pengalaman" class="scroll-mt-20 grid gap-12 py-16 sm:grid-cols-2">
     <div>
-      <h2 class="text-sm font-mono uppercase tracking-widest text-pink">Pengalaman</h2>
+      <h2 class="deco-label">Pengalaman</h2>
       <ul class="mt-6 space-y-5">
         {experience.map((e) => (
           <li>
@@ -52,7 +52,7 @@ import { profile, projects, experience, education } from "../data/content";
       </ul>
     </div>
     <div>
-      <h2 class="text-sm font-mono uppercase tracking-widest text-pink">Pendidikan</h2>
+      <h2 class="deco-label">Pendidikan</h2>
       <ul class="mt-6 space-y-5">
         {education.map((e) => (
           <li>
@@ -67,7 +67,7 @@ import { profile, projects, experience, education } from "../data/content";
   <div class="horizon opacity-60"></div>
 
   <section id="kontak" class="scroll-mt-20 py-16">
-    <h2 class="text-sm font-mono uppercase tracking-widest text-pink">Kontak</h2>
+    <h2 class="deco-label">Kontak</h2>
     <p class="mt-6 text-2xl font-semibold sm:text-3xl">Terbuka untuk peluang kerja dan kolaborasi.</p>
     <div class="mt-6 flex flex-col gap-2 text-lg">
       <a href={`mailto:${profile.email}`} class="w-fit text-cyan hover:underline">{profile.email}</a>

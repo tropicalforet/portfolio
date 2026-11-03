@@ -1,17 +1,19 @@
 @import "tailwindcss";
 @import "@fontsource-variable/space-grotesk";
 
+/* Tema: 80s Miami night — neon pink & aqua, aksen emas art deco */
 @theme {
   --font-sans: "Space Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-  --color-night: #0d0b1e;
-  --color-night-2: #16132e;
-  --color-line: #2a2550;
-  --color-ink: #ece9f7;
-  --color-muted: #9591b5;
-  --color-pink: #ff3e9a;
-  --color-cyan: #2de2e6;
-  --color-sun: #ffb547;
+  --color-night: #0a0612;
+  --color-night-2: #140a1f;
+  --color-line: #2b1838;
+  --color-ink: #f3eef7;
+  --color-muted: #a597b5;
+  --color-pink: #ff2d95;
+  --color-cyan: #19e6d4;
+  --color-sun: #ff8a3d;
+  --color-gold: #d4af37;
 }
 
 html {
@@ -28,7 +30,38 @@ body {
   color: var(--color-night);
 }
 
+/* Garis cakrawala sunset */
 .horizon {
   height: 2px;
   background: linear-gradient(90deg, var(--color-pink), var(--color-sun) 50%, var(--color-cyan));
+}
+
+/* Nama di hero: neon pink */
+.neon {
+  color: #fff;
+  text-shadow:
+    0 0 6px rgb(255 45 149 / 0.55),
+    0 0 22px rgb(255 45 149 / 0.35);
+}
+
+/* Label bagian: emas dengan garis ganda art deco */
+.deco-label {
+  display: inline-block;
+  padding-bottom: 6px;
+  border-bottom: 3px double var(--color-gold);
+  color: var(--color-gold);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.btn-neon {
+  background: var(--color-pink);
+  color: var(--color-night);
+  box-shadow: 0 0 18px rgb(255 45 149 / 0.35);
+}
+.btn-neon:hover {
+  background: var(--color-gold);
+  box-shadow: 0 0 18px rgb(212 175 55 / 0.35);
 }

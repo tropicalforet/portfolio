@@ -1,0 +1,65 @@
+---
+// Layar pembuka gaya booting terminal. Tampil sekali per sesi, hanya di beranda.
+// Bisa dilewati dengan klik / tombol apa saja. Dilewati otomatis jika pengunjung
+// memilih "reduce motion" di sistemnya.
+import { profile, projects } from "../data/content";
+
+const first = profile.name.split(" ")[0].toLowerCase();
+const lines = [
+  { tag: "ok", text: `booting ${first}.os` },
+  { tag: "ok", text: `memuat ~/proyek (${projects.length})` },
+  { tag: "ok", text: "menyalakan neon" },
+];
+---
+
+<script is:inline>
+  (function () {
+    try {
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!reduce && !sessionStorage.getItem("booted")) {
+        document.documentElement.classList.add("booting");
+      }
+    } catch (e) {}
+  })();
+</script>
+
+<div id="boot" aria-hidden="true">
+  <div class="boot-inner">
+    {lines.map((l) => (
+      <p class="boot-line">
+        <span class="text-muted">[</span> <span class="text-cyan">{l.tag}</span> <span class="text-muted">]</span> {l.text}
+      </p>
+    ))}
+    <p class="boot-line boot-welcome"><span class="text-pink">›</span> selamat datang<span class="boot-cursor">_</span></p>
+  </div>
+  <p class="boot-skip">klik atau tekan tombol apa saja untuk lewati</p>
+</div>
+
+<script is:inline>
+  (function () {
+    var root = document.documentElement;
+    if (!root.classList.contains("booting")) return;
+    var boot = document.getElementById("boot");
+    var lines = boot.querySelectorAll(".boot-line");
+    var timers = [];
+    var done = false;
+
+    function finish() {
+      if (done) return;
+      done = true;
+      timers.forEach(clearTimeout);
+      try { sessionStorage.setItem("booted", "1"); } catch (e) {}
+      boot.classList.add("boot-out");
+      setTimeout(function () { root.classList.remove("booting"); }, 450);
+      window.removeEventListener("keydown", finish);
+      boot.removeEventListener("click", finish);
+    }
+
+    lines.forEach(function (el, i) {
+      timers.push(setTimeout(function () { el.classList.add("show"); }, 250 + i * 320));
+    });
+    timers.push(setTimeout(finish, 250 + lines.length * 320 + 700));
+    window.addEventListener("keydown", finish);
+    boot.addEventListener("click", finish);
+  })();
+</script>
